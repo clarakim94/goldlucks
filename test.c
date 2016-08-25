@@ -119,9 +119,9 @@ static void init_db(appdata_s *ad) {
    int siz = strlen(resource) + 10;
    char * path = malloc(sizeof(char) * siz);
 
-   strncat(path, resource, siz);
-   strncat(path, "test.db", siz);
-   sqlite3_open(path, &ad->db);
+   //strncat(path, resource, siz);
+   strncat(resource, "/test.db", siz);
+   sqlite3_open(resource, &ad->db);
 
    free(path);
    CreateTable(ad);
